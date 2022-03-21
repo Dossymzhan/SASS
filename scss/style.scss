@@ -1,7 +1,4 @@
 @import 'config';
-@import 'utilities';
-@import 'buttons';
-
 
 * {
   box-sizing: border-box;
@@ -24,8 +21,7 @@ a {
 }
 
 .showcase {
-  background-color: $primary-color;
-  color: $white-color;
+  @include set-background($primary-color);
   height: 500px;
 
   nav {
@@ -46,10 +42,10 @@ a {
     a:hover {
       color: $secondary-color;
     }
-  }
 
-  a {
-    color: $white-color;
+    a {
+      color: set-text-color($primary-color);
+    }
   }
 
   .showcase-content {
@@ -72,4 +68,9 @@ a {
     }
   }
 }
+
+@import 'utilities';
+@import 'buttons';
+@import 'mobile';
+
 
